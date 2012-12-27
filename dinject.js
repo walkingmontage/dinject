@@ -13,18 +13,18 @@
         pool: null,
         libs:null,
         init: function (_config) {
-            this.updateConfig(_config);
+            this.update(_config);
             this.pool = [];
             this.libs=_config.libs;
             return this;
         },
-        updateConfig: function (_config) {
+        update: function (_config) {
             if (!_config) {
                 return;
             }
             this.config = _config;
         },
-        cleanPool: function () {
+        clean: function () {
             this.pool = [];
         },
         create: function (_class) {
@@ -41,11 +41,14 @@
                 }
             }
 
+            /* create a new instance */
             var instance = new _class();
             it.pool.push(instance);
 
-            /* if there is nothing to inject */
+            /* get the bean settings*/
             var beanConfig = it.getBeanConfig(_class.name);
+
+            /* if there is nothing to inject */
             if (!beanConfig.hasOwnProperty('inject')) {
                 return instance;
             }
@@ -55,7 +58,10 @@
             /* dependency inject */
             for (var j = 0; j < c.length; j++) {
 
-                /* generate : instance.prop=it.create(need) */
+                /*
+                    generate : instance.prop=it.create(need);
+                    this will fill the dependeny tree.
+                */
                 eval('instance.' + c[j].prop + '= it.create(' + c[j].need + ')');
             }
             return instance;
@@ -68,7 +74,7 @@
                 }
             }
         },
-        libTool:function(_libName,_di,_callback){
+        lib:function(_libName,_di,_callback){
 	    	this.libName=_libName;
 	    	this.loading=true;
 	    	this.callback=_callback;
@@ -109,7 +115,7 @@
 	    	}
     	},
     	using:function(_libName,_callback){
-    		new this.libTool(_libName,this,_callback).get();
+    		new this.lib(_libName,this,_callback).get();
     	}
 
     }
