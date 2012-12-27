@@ -1,4 +1,4 @@
-#dinject
+#dinject.js
 =======
 #####Dependency injection in javascript.
 =======
