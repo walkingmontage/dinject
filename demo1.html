@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>deinject - demo</title>
+	<title>deinject - demo</title>
 	<script type="text/javascript">
 		window.onload=function(){
-		    di.using('humanBehavior', function () {
+		    di.using('humanBehavior', function () {//it's not necessary ,just for demo ,and the Speak class is stored in human.js
 		        log('a new person called T-Bag');
 		        var p1 = di.create(Person);
 		        p1.doThings('t-bag');
