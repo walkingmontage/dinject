@@ -5,6 +5,7 @@
  * http://www.gnu.org/licenses/gpl.html
  *
  * Date: Thu Dec 27 2012 17:47:40 GMT+0800 (CST)
+ * Creator: Yulin
  */
 (function (window) {
     var dinject = {
