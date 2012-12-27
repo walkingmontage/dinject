@@ -49,3 +49,56 @@ using('humanBehavior',function(){
 });
 </code>
 </pre>
+#Document
+###Get Started
+
+Insert the script in any place but below the dinject_config in the html page.
+<code><script type="text/javascript" src="dinject.js"></script></code>
+And then setup the dinject_config for dependency injection maping and libs settings as follow:
+<pre><code>
+var di_config = {
+    beans: [
+    {
+		    name: 'Speak',
+		    from: 'humanBehavior'
+		}
+		,{	
+		    name: 'Walk'
+		}
+		,{
+		    name: 'Person',
+		    inject: [{
+		        need: 'Speak',
+		        prop: 'speak'
+		    }, {
+		        need: 'Walk',
+		        prop: 'walk'
+		    }]
+		}],
+    libs:[
+    	{
+    		name:'humanBehavior',
+    		path:'human.js'
+    	}
+    ]
+}
+</code></pre>
+That's it ,now you can use the following api:
+
+***di.create(class or className)***
+<br/>
+To get an class instance,it could be from the pool or just a new one.and the dependency injection in this instance is just follow your config.
+
+
+***di.using(libName,callback)***
+<br/>
+To get a script at runtime , the script is config in the dinject config libs.the callback will call when the script loaded.
+
+***di.clean()***
+<br/>
+To manually clean the instances pool.
+
+***di.update(config)***
+<br/>
+To reset the configuration of beans and libs.
+
