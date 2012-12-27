@@ -34,7 +34,7 @@ var di_config = {
 }
 </code></pre>
 
-Then you can use like this:
+Then you can use it like this:
 <pre><code>
 di.create(People);
 </code></pre>
