@@ -1,4 +1,5 @@
-#dinject.js
+## Welcome to dinject.js
+
 =======
 #####Dependency injection in javascript.
 =======
@@ -35,9 +36,7 @@ var di_config = {
 </code></pre>
 
 Then you can use it like this:
-<pre><code>
-di.create(People);
-</code></pre>
+<pre><code>di.create(People);</code></pre>
 
 dinject will fill the speak and walk property with new instance or the instance from pool then return a Person instance to you.
 <br/>
@@ -50,7 +49,7 @@ using('humanBehavior',function(){
 </code>
 </pre>
 #Document
-###Get Started
+###Getting Started
 
 Insert the script in any place but below the dinject_config in the html page.
 <code>\<script type="text/javascript" src="dinject.js"\>\</script\></code><br/>
