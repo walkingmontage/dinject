@@ -44,7 +44,7 @@ dinject will fill the speak and walk property with new instance or the instance 
 Also dinject provide a simple way to load js at runtime.
 <pre>
 <code>
-using('humanBehavior',function(){
+di.using('humanBehavior',function(){
   //do something when the js file loaded.
 });
 </code>
