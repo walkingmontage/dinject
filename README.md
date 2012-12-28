@@ -53,7 +53,7 @@ using('humanBehavior',function(){
 ###Get Started
 
 Insert the script in any place but below the dinject_config in the html page.
-<code><script type="text/javascript" src="dinject.js"></script></code>
+<code>\<script type="text/javascript" src="dinject.js"\>\</script\></code><br/>
 And then setup the dinject_config for dependency injection maping and libs settings as follow:
 <pre><code>
 var di_config = {
