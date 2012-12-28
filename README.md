@@ -4,7 +4,8 @@
 #####Dependency injection in javascript.
 =======
 >dinject is a light weight javascript dependency injection framework that allows javascript developers can removing hard-coded dependencies and making it possible to change them, whether at run-time or compile-time.
-
+<br/><br/>
+[Document](https://github.com/squarepants/dinject/edit/master/README.md#document)
 ####Like the Spring framework in java,you can use DI in javascript with a simple config as follows
 <pre><code>
 var di_config = {
